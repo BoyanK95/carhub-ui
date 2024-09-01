@@ -6,6 +6,7 @@ import AllCars from "./components/screens/AllCars";
 import Login from "./components/screens/Login";
 import MyCars from "./components/screens/MyCars";
 import Profile from "./components/screens/Profile";
+import Settings from "./components/screens/Settings";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
             <Route path="/my-cars" element={<MyCars />} />
             <Route path="/login" element={<Login />} />
             <Route path="/profile" element={<Profile />} />
+            <Route path="/settings" element={<Settings />} />
           </Routes>
         </div>
       </div>

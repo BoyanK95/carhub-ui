@@ -23,6 +23,7 @@ function classNames(...classes: string[]) {
 }
 
 export default function Navbar() {
+  
   return (
     <Disclosure
       as="nav"
