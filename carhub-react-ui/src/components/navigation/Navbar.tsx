@@ -70,7 +70,7 @@ export default function Navbar() {
             </div>
           </div>
           {user && !loading ? (
-            <UserProfile />
+            <UserProfile user={user} />
           ) : (
             <Link className="text-white hover:text-indigo-400" to={"/login"}>
               Login
