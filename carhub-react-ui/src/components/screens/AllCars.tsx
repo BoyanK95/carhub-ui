@@ -18,6 +18,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 // } from "@/components/ui/select";
 import { Slider } from "@/components/ui/slider";
 import { CarIcon, SearchIcon, FilterIcon } from "lucide-react";
+import Footer from "../Footer/Footer";
 
 // Placeholder data for cars TODO: Replace with actual data
 const cars = [
@@ -71,6 +72,7 @@ export default function AllCars() {
   const [priceRange, setPriceRange] = useState([0, 100000]);
   const [selectedTypes, setSelectedTypes] = useState<string[]>([]);
 
+  // TODO: Implement filtering logic based on search, price range, and selected types after connecting to the backend
   const filteredCars = cars.filter(
     (car) =>
       car.name.toLowerCase().includes(searchTerm.toLowerCase()) &&
@@ -172,24 +174,7 @@ export default function AllCars() {
           </div>
         </main>
       </div>
-
-      <footer className="mt-8 flex justify-center">
-        <Button variant="outline" className="mx-1">
-          Previous
-        </Button>
-        <Button variant="outline" className="mx-1">
-          1
-        </Button>
-        <Button variant="outline" className="mx-1">
-          2
-        </Button>
-        <Button variant="outline" className="mx-1">
-          3
-        </Button>
-        <Button variant="outline" className="mx-1">
-          Next
-        </Button>
-      </footer>
+      <Footer />
     </div>
   );
 }
