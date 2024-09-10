@@ -5,14 +5,12 @@ import {
 } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Link } from "react-router-dom";
-// import darkLogo from '../../assets/darkCarLogo.png'
-import whiteLogo from "../../assets/whiteCarLogo.png";
 import { useUser } from "@/hooks/fetchUser";
 import UserProfile from "../UserProfile/UserProfile";
+import { CarIcon } from "lucide-react";
 
 const navigation = [
-  { name: "Home", href: "/", current: true },
-  { name: "All Cars", href: "/all-cars", current: false },
+  { name: "All Cars", href: "all-cars", current: false },
   { name: "My Cars", href: "my-cars", current: false },
 ];
 
@@ -47,7 +45,9 @@ export default function Navbar() {
           </div>
           <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
             <div className="flex flex-shrink-0 items-center">
-              <img alt="Your Company" src={whiteLogo} className="h-8 w-auto" />
+              <Link to="/">
+                <CarIcon className="h-8 w-8 mr-2 text-white hover:text-blue-300 cursor-pointer" />
+              </Link>
             </div>
             <div className="hidden sm:ml-6 sm:block">
               <div className="flex space-x-4">
