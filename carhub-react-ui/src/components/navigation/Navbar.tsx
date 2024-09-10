@@ -28,7 +28,6 @@ export default function Navbar() {
       current: location.pathname === `/${item.href}`,
     };
   });
-  console.log(updatedNavigation);
 
   return (
     <Disclosure
@@ -55,7 +54,7 @@ export default function Navbar() {
           <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
             <div className="flex flex-shrink-0 items-center">
               <Link to="/">
-                <CarIcon className="h-8 w-8 mr-2 text-white hover:text-blue-300 cursor-pointer" />
+                <CarIcon className="h-8 w-8 mr-2 text-white hover:text-indigo-300 cursor-pointer" />
               </Link>
             </div>
             <div className="hidden sm:ml-6 sm:block">
@@ -81,7 +80,7 @@ export default function Navbar() {
           {user && !loading ? (
             <UserProfile user={user} />
           ) : (
-            <Link className="text-white hover:text-indigo-400" to={"/login"}>
+            <Link className="text-white hover:text-indigo-300" to={"/login"}>
               Login
             </Link>
           )}
