@@ -4,7 +4,7 @@ import {
   DisclosurePanel,
 } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useUser } from "@/hooks/fetchUser";
 import UserProfile from "../UserProfile/UserProfile";
 import { CarIcon } from "lucide-react";
@@ -20,6 +20,15 @@ function classNames(...classes: string[]) {
 
 export default function Navbar() {
   const { user, loading } = useUser();
+  const location = useLocation();
+
+  const updatedNavigation = navigation.map((item) => {
+    return {
+      ...item,
+      current: location.pathname === `/${item.href}`,
+    };
+  });
+  console.log(updatedNavigation);
 
   return (
     <Disclosure
@@ -51,7 +60,7 @@ export default function Navbar() {
             </div>
             <div className="hidden sm:ml-6 sm:block">
               <div className="flex space-x-4">
-                {navigation.map((item) => (
+                {updatedNavigation.map((item) => (
                   <Link
                     to={item.href}
                     key={item.name}
