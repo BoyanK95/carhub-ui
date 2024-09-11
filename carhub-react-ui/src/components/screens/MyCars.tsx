@@ -1,12 +1,12 @@
 import { useState } from "react";
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+// import {
+//   Card,
+//   CardContent,
+//   CardFooter,
+//   CardHeader,
+//   CardTitle,
+// } from "@/components/ui/card";
+// import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogContent,
@@ -16,69 +16,11 @@ import {
 } from "@/components/ui/dialog";
 // import { ScrollArea } from "@/components/ui/scroll-area";
 import { CarFront, Calendar, Fuel, Gauge } from "lucide-react";
-import { Cars } from "@/types";
+// import { Cars } from "@/types";
 import { Car } from "@/types";
+import { CarCard } from "../CarCard/CarCard";
+import { cars } from "@/dummyData/cars";
 
-// Mock data for cars TODO: replace with actual data when BE is ready
-const cars: Cars = [
-  {
-    id: 1,
-    make: "Toyota",
-    model: "Camry",
-    year: 2020,
-    color: "Silver",
-    fuelType: "Gasoline",
-    mileage: 15000,
-  },
-  {
-    id: 2,
-    make: "Honda",
-    model: "Civic",
-    year: 2019,
-    color: "Blue",
-    fuelType: "Gasoline",
-    mileage: 22000,
-  },
-  {
-    id: 3,
-    make: "Tesla",
-    model: "Model 3",
-    year: 2021,
-    color: "Red",
-    fuelType: "Electric",
-    mileage: 8000,
-  },
-  {
-    id: 4,
-    make: "Ford",
-    model: "F-150",
-    year: 2018,
-    color: "Black",
-    fuelType: "Diesel",
-    mileage: 35000,
-  },
-];
-
-function CarCard({ car, onClick }: { car: Car; onClick: (car: Car) => void }) {
-  return (
-    <Card className="w-full">
-      <CardHeader>
-        <CardTitle>
-          {car.make} {car.model}
-        </CardTitle>
-      </CardHeader>
-      <CardContent>
-        <div className="flex items-center space-x-2 text-sm text-muted-foreground">
-          <Calendar className="h-4 w-4" />
-          <span>{car.year}</span>
-        </div>
-      </CardContent>
-      <CardFooter>
-        <Button onClick={() => onClick(car)}>View Details</Button>
-      </CardFooter>
-    </Card>
-  );
-}
 function CarDetailsModal({
   car,
   isOpen,
