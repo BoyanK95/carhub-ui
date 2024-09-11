@@ -1,6 +1,12 @@
 import { Link } from "react-router-dom";
 import { Button } from "../ui/button";
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "../ui/card";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "../ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
 
 const Home = () => {
@@ -20,7 +26,6 @@ const Home = () => {
                 </p>
               </div>
               <div className="w-full max-w-sm space-y-2">
-              
                 {/* <form className="flex space-x-2">
                 TODO : Add search functionality
                   <Input
@@ -49,6 +54,7 @@ const Home = () => {
               </TabsList>
               <TabsContent value="all">
                 <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                  {/* TODO: Replace with actual cars when BE is ready */}
                   {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
                     <Card key={i} className="w-full">
                       <CardHeader>
@@ -70,10 +76,12 @@ const Home = () => {
                         <Button variant="outline">View Details</Button>
                       </CardFooter>
                     </Card>
-                  ))}                </div>
+                  ))}
+                </div>
               </TabsContent>
               <TabsContent value="my">
                 <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                  {/* TODO: Replace with actual cars when BE is ready */}
                   {[1, 2, 3].map((i) => (
                     <Card key={i}>
                       <CardHeader>
@@ -107,10 +115,17 @@ const Home = () => {
           © 2024 CarHub. All rights reserved.
         </p>
         <nav className="sm:ml-auto flex gap-4 sm:gap-6">
-          <Link to={'/#'} className="text-xs hover:underline underline-offset-4" >
+          {/* TODO add pages */}
+          <Link
+            to={"/#"}
+            className="text-xs hover:underline underline-offset-4"
+          >
             Terms of Service
           </Link>
-          <Link to={'/#'} className="text-xs hover:underline underline-offset-4" >
+          <Link
+            to={"/#"}
+            className="text-xs hover:underline underline-offset-4"
+          >
             Privacy
           </Link>
         </nav>
