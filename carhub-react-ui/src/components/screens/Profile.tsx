@@ -14,14 +14,10 @@ import { Label } from "@/components/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Textarea } from "@/components/ui/textarea";
 import { CarIcon, BellIcon, LockIcon, UserIcon, StarIcon } from "lucide-react";
+import { user } from "@/dummyData/user";
+import UserInfo from "../Profile/UserInfo";
 
 // Placeholder data
-const user = {
-  name: "John Doe",
-  email: "john.doe@example.com",
-  avatar: "/placeholder.svg?height=100&width=100",
-  bio: "Car enthusiast and weekend racer. Always on the lookout for my next dream ride!",
-};
 
 const savedCars = [
   {
@@ -50,44 +46,13 @@ const activities = [
 export default function Profile() {
   const [name, setName] = useState(user.name);
   const [email, setEmail] = useState(user.email);
-  const [bio, setBio] = useState(user.bio);
 
   return (
     <div className="container mx-auto p-4">
       <h1 className="text-3xl font-bold mb-8">My Profile</h1>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <Card className="md:col-span-2">
-          <CardHeader>
-            <CardTitle>User Information</CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            <div className="flex items-center space-x-4">
-              <Avatar className="w-20 h-20">
-                <AvatarImage src={user.avatar} alt={user.name} />
-                <AvatarFallback>
-                  {user.name
-                    .split(" ")
-                    .map((n) => n[0])
-                    .join("")}
-                </AvatarFallback>
-              </Avatar>
-              <div>
-                <h2 className="text-2xl font-bold">{user.name}</h2>
-                <p className="text-muted-foreground">{user.email}</p>
-              </div>
-            </div>
-            <Textarea
-              placeholder="Tell us about yourself"
-              value={bio}
-              onChange={(e) => setBio(e.target.value)}
-            />
-          </CardContent>
-          <CardFooter>
-            <Button>Update Profile</Button>
-          </CardFooter>
-        </Card>
-
+        <UserInfo />
         <Card>
           <CardHeader>
             <CardTitle>Saved Cars</CardTitle>
