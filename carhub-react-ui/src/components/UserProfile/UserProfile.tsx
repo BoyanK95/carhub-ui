@@ -1,9 +1,25 @@
 import { User } from "@/types";
 import { Menu, MenuButton, MenuItem, MenuItems } from "@headlessui/react";
 import { BellIcon } from "@heroicons/react/24/outline";
-import { Link } from "react-router-dom";
+// import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
-const UserProfile = ({ user }: { user: User }) => {
+const UserProfile = ({
+  user,
+  handleLogout,
+}: {
+  user: User;
+  handleLogout: () => void;
+}) => {
+  const navigation = useNavigate();
+
+  const handleLogoutClick = () => {
+    // TODO: Implement logout logic when API is ready
+    console.log("Logout clicked");
+    handleLogout();
+    navigation("/");
+  };
+
   return (
     <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
       <button
@@ -50,13 +66,13 @@ const UserProfile = ({ user }: { user: User }) => {
             </Link>
           </MenuItem>
           <MenuItem>
-            <a
+            <span
               //TODO Sing out functionality
-              href="#"
-              className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100"
+              onClick={handleLogoutClick}
+              className="block px-4 cursor-pointer py-2 text-sm text-gray-700 data-[focus]:bg-gray-100"
             >
               Sign out
-            </a>
+            </span>
           </MenuItem>
         </MenuItems>
       </Menu>
