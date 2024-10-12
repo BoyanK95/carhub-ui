@@ -8,7 +8,9 @@ import { Link, useLocation } from "react-router-dom";
 // import { useUser } from "@/hooks/fetchUser";
 import UserProfile from "../UserProfile/UserProfile";
 import { CarIcon } from "lucide-react";
-import { user } from "@/dummyData/user";
+import { user as dummyUser } from "@/dummyData/user";
+import { useState } from "react";
+import { User } from "@/types";
 
 const navigation = [
   { name: "All Cars", href: "all-cars", current: false },
@@ -20,9 +22,16 @@ function classNames(...classes: string[]) {
 }
 
 export default function Navbar() {
-  // TODO: Implement user authentication and fetch user data when BackENd is ready
+  // TODO: Implement real user authentication and fetch user data when API is ready
   // const { user, loading } = useUser();
+  const [user, setUser] = useState<User | null>(null);
   const location = useLocation();
+
+  const handleLogin = () => {
+    // TODO: Implement login logic when API is ready
+    console.log("Login clicked");
+    setUser(dummyUser);
+  };
 
   const updatedNavigation = navigation.map((item) => {
     return {
@@ -83,9 +92,12 @@ export default function Navbar() {
           {user ? (
             <UserProfile user={user} />
           ) : (
-            <Link className="text-white hover:text-indigo-300" to={"/login"}>
+            <button
+              onClick={handleLogin}
+              className="text-white hover:text-indigo-300"
+            >
               Login
-            </Link>
+            </button>
           )}
         </div>
       </div>
