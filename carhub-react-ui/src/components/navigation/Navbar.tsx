@@ -33,6 +33,12 @@ export default function Navbar() {
     setUser(dummyUser);
   };
 
+  const handleLogout = () => {
+    // TODO: Implement logout logic when API is ready
+    console.log("Logout clicked");
+    setUser(null);
+  };
+
   const updatedNavigation = navigation.map((item) => {
     return {
       ...item,
@@ -90,7 +96,7 @@ export default function Navbar() {
           </div>
           {/* TODO ADD LOADING STATE */}
           {user ? (
-            <UserProfile user={user} />
+            <UserProfile user={user} handleLogout={handleLogout} />
           ) : (
             <button
               onClick={handleLogin}
