@@ -28,11 +28,6 @@ export default function Navbar() {
   const [user, setUser] = useState<User | null>(null);
   const location = useLocation();
 
-  const handleLogin = () => {
-    // TODO: Implement login logic when API is ready
-    console.log("Login clicked");
-    setUser(dummyUser);
-  };
 
   const handleLogout = () => {
     // TODO: Implement logout logic when API is ready
@@ -102,12 +97,11 @@ export default function Navbar() {
               {user ? (
                 <UserProfile user={user} handleLogout={handleLogout} />
               ) : (
-                <button
-                  onClick={handleLogin}
-                  className="text-white hover:text-indigo-300"
+                <Link to={"/login"}
+                  className="text-white dark:hover:text-indigo-100 bg-blue-500 hover:bg-blue-600 hover:shadow-sm dark:hover:bg-indigo-800 dark:bg-indigo-600 rounded-md px-3 py-2 text-sm font-medium"
                 >
                   Login
-                </button>
+                </Link >
               )}
             </div>
           </div>
