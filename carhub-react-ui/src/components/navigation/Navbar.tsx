@@ -97,17 +97,19 @@ export default function Navbar() {
           </div>
           {/* TODO ADD LOADING STATE */}
           <div className="absolute inset-y-0 right-0 flex items-center sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-            <ModeToggle />
-            {user ? (
-              <UserProfile user={user} handleLogout={handleLogout} />
-            ) : (
-              <button
-                onClick={handleLogin}
-                className="text-white hover:text-indigo-300"
-              >
-                Login
-              </button>
-            )}
+            <div className="flex items-center space-x-4">
+              <ModeToggle />
+              {user ? (
+                <UserProfile user={user} handleLogout={handleLogout} />
+              ) : (
+                <button
+                  onClick={handleLogin}
+                  className="text-white hover:text-indigo-300"
+                >
+                  Login
+                </button>
+              )}
+            </div>
           </div>
         </div>
       </div>
