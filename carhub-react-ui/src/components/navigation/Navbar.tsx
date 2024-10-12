@@ -11,6 +11,7 @@ import { CarIcon } from "lucide-react";
 import { user as dummyUser } from "@/dummyData/user";
 import { useState } from "react";
 import { User } from "@/types";
+import { ModeToggle } from "../ModeToggle/ModeTogle";
 
 const navigation = [
   { name: "All Cars", href: "all-cars", current: false },
@@ -95,16 +96,19 @@ export default function Navbar() {
             </div>
           </div>
           {/* TODO ADD LOADING STATE */}
-          {user ? (
-            <UserProfile user={user} handleLogout={handleLogout} />
-          ) : (
-            <button
-              onClick={handleLogin}
-              className="text-white hover:text-indigo-300"
-            >
-              Login
-            </button>
-          )}
+          <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+            <ModeToggle />
+            {user ? (
+              <UserProfile user={user} handleLogout={handleLogout} />
+            ) : (
+              <button
+                onClick={handleLogin}
+                className="text-white hover:text-indigo-300"
+              >
+                Login
+              </button>
+            )}
+          </div>
         </div>
       </div>
 
