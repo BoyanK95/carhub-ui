@@ -50,7 +50,7 @@ export default function Navbar() {
   return (
     <Disclosure
       as="nav"
-      className="bg-gray-800 fixed top-0 left-0 right-0 z-50"
+      className="dark:bg-indigo-900 bg-blue-300 fixed top-0 left-0 right-0 z-50"
     >
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
         <div className="relative flex h-16 items-center justify-between">
@@ -72,7 +72,7 @@ export default function Navbar() {
           <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
             <div className="flex flex-shrink-0 items-center">
               <Link to="/">
-                <CarIcon className="h-8 w-8 mr-2 text-white hover:text-indigo-300 cursor-pointer" />
+                <CarIcon className="h-8 w-8 mr-2 text-blue-500 hover:text-blue-800 hover:shadow-sm dark:hover:text-white dark:text-indigo-300 cursor-pointer" />
               </Link>
             </div>
             <div className="hidden sm:ml-6 sm:block">
@@ -84,8 +84,8 @@ export default function Navbar() {
                     aria-current={item.current ? "page" : undefined}
                     className={classNames(
                       item.current
-                        ? "bg-gray-900 text-white"
-                        : "text-gray-300 hover:bg-gray-700 hover:text-white",
+                        ? "bg-blue-200 text-blue-800 dark:bg-indigo-800 dark:text-indigo-200"
+                        : "text-blue-700 hover:bg-blue-600 hover:text-white dark:text-indigo-300 dark:hover:bg-indigo-700",
                       "rounded-md px-3 py-2 text-sm font-medium"
                     )}
                   >
