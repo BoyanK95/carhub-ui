@@ -98,7 +98,7 @@ export default function Navbar() {
                 <UserProfile user={user} handleLogout={handleLogout} />
               ) : (
                 <Link to={"/login"}
-                  className="text-white dark:hover:text-indigo-100 bg-blue-500 hover:bg-blue-600 hover:shadow-sm dark:hover:bg-indigo-800 dark:bg-indigo-600 rounded-md px-3 py-2 text-sm font-medium"
+                  className="text-white dark:hover:text-indigo-100 bg-blue-500 hover:bg-blue-200 hover:shadow-sm dark:hover:bg-indigo-800 dark:bg-indigo-600 rounded-md px-3 py-2 text-sm font-medium"
                 >
                   Login
                 </Link >
