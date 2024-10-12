@@ -5,9 +5,10 @@ import {
 } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { Link, useLocation } from "react-router-dom";
-import { useUser } from "@/hooks/fetchUser";
+// import { useUser } from "@/hooks/fetchUser";
 import UserProfile from "../UserProfile/UserProfile";
 import { CarIcon } from "lucide-react";
+import { user } from "@/dummyData/user";
 
 const navigation = [
   { name: "All Cars", href: "all-cars", current: false },
@@ -19,7 +20,8 @@ function classNames(...classes: string[]) {
 }
 
 export default function Navbar() {
-  const { user, loading } = useUser();
+  // TODO: Implement user authentication and fetch user data when BackENd is ready
+  // const { user, loading } = useUser();
   const location = useLocation();
 
   const updatedNavigation = navigation.map((item) => {
@@ -77,7 +79,8 @@ export default function Navbar() {
               </div>
             </div>
           </div>
-          {user && !loading ? (
+          {/* TODO ADD LOADING STATE */}
+          {user ? (
             <UserProfile user={user} />
           ) : (
             <Link className="text-white hover:text-indigo-300" to={"/login"}>
