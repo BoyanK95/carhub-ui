@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import {
   Card,
   CardContent,
-  //   CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
@@ -15,6 +14,11 @@ import { Button } from "../ui/button";
 const UserInfo = () => {
   const [bio, setBio] = useState(user.bio);
 
+  const changeProfilePicture = () => {
+    // TODO: Implement profile picture change logic when API is ready
+    console.log("Change profile picture clicked");
+  };
+
   return (
     <Card className="md:col-span-2">
       <CardHeader>
@@ -22,7 +26,7 @@ const UserInfo = () => {
       </CardHeader>
       <CardContent className="space-y-4">
         <div className="flex items-center space-x-4">
-          <Avatar className="w-20 h-20">
+          <Avatar className="w-20 h-20 cursor-pointer" onClick={changeProfilePicture}>
             <AvatarImage src={user.imageUrl} alt={user.name} />
             <AvatarFallback>
               {user.name
