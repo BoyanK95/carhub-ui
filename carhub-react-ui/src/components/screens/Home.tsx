@@ -13,14 +13,17 @@ const Home = () => {
   return (
     <div className="flex flex-col min-h-screen w-full">
       <main className="flex-grow">
-        <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48 bg-black">
+        <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48 bg-blue-800 dark:bg-indigo-950">
           <div className="container mx-auto px-4 md:px-6 max-w-7xl">
             <div className="flex flex-col items-center space-y-4 text-center">
               <div className="space-y-2">
                 <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none text-white">
-                  Welcome to CarHub
+                  Welcome to{" "}
+                  <span className="text-blue-200 dark:text-indigo-200">
+                    CarHub
+                  </span>
                 </h1>
-                <p className="mx-auto max-w-[700px] text-gray-300 md:text-xl">
+                <p className="mx-auto max-w-[700px] text-gray-200 md:text-xl">
                   Discover, share, and connect with car enthusiasts. Browse
                   through our extensive collection or showcase your own rides.
                 </p>
@@ -42,15 +45,15 @@ const Home = () => {
             </div>
           </div>
         </section>
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100">
+        <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-100 dark:bg-gray-900">
           <div className="container mx-auto px-4 md:px-6 max-w-7xl">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-center mb-8">
               Explore Cars
             </h2>
             <Tabs defaultValue="all" className="w-full">
               <TabsList className="grid w-full grid-cols-2">
-                <TabsTrigger value="all">All Cars</TabsTrigger>
-                <TabsTrigger value="my">My Cars</TabsTrigger>
+                <TabsTrigger className="bg-gray-300" value="all">All Cars</TabsTrigger>
+                <TabsTrigger className="bg-gray-300" value="my">My Cars</TabsTrigger>
               </TabsList>
               <TabsContent value="all">
                 <h2 className="text-2xl font-bold py-5 flex justify-center">
